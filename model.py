@@ -6,7 +6,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 class SimpleCNN(nn.Module):
-     def __init__(self):
+    def __init__(self):
         super(SimpleCNN, self).__init__()
 
         self.layer1 = nn.Sequential(
