@@ -49,7 +49,7 @@ def train_model():
     
     accuracy = 100 * correct / total
     print(f'Test Accuracy: {accuracy:.2f}%')
-     with torch.no_grad():
+    with torch.no_grad():
         for data, target in train_loader:
             data, target = data.to(device), target.to(device)
             outputs = model(data)
