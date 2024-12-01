@@ -39,7 +39,7 @@ def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 def save_model(model, accuracy):
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
     filename = f'model_acc{accuracy:.2f}_{timestamp}.pth'
     torch.save(model.state_dict(), filename)
     return filename
