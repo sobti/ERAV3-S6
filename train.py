@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
+import matplotlib
 import matplotlib.pyplot as plt
 from model import SimpleCNN, count_parameters, save_model
 
