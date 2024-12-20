@@ -10,7 +10,7 @@ class SimpleCNN(nn.Module):
     def __init__(self):
         super(SimpleCNN, self).__init__()
 
-       self.convblock1 = nn.Sequential(
+        self.convblock1 = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=8, kernel_size=(5, 5), padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(8)
