@@ -13,7 +13,7 @@ class SimpleCNN(nn.Module):
        self.convblock1 = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=8, kernel_size=(5, 5), padding=0, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(8),
+            nn.BatchNorm2d(8)
         ) # output_size = 24
 
         # CONVOLUTION BLOCK 1
@@ -54,7 +54,7 @@ class SimpleCNN(nn.Module):
         self.convblock6 = nn.Sequential(
             nn.Conv2d(in_channels=16, out_channels=16, kernel_size=(3, 3), padding=1, bias=False),
             nn.ReLU(),            
-            nn.BatchNorm2d(16),
+            nn.BatchNorm2d(16)
        
         ) # output_size = 6-------------------4
         self.convblock7 = nn.Sequential(
