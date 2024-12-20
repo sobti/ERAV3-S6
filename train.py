@@ -1,4 +1,6 @@
 import torch
+import tqdm
+from tqdm import tqdm
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
