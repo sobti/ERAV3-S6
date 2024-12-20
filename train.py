@@ -53,9 +53,12 @@ def train_model():
     show_transformed_images(train_loader)
     
     # Initialize model
+    from torch.optim.lr_scheduler import StepLR
+    optimizer = optim.SGD(model.parameters(), lr=0.046, momentum=0.90,weight_decay=0.001)
+    scheduler=StepLR(optimizer,step_size=4,gamma=0.1)
     model = SimpleCNN().to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters())
+    
     
     # Train for one epoch
     model.train()
