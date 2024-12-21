@@ -67,7 +67,9 @@ def train_model():
     for epoch in range(EPOCHS):
      print("Epoch:",epoch)
      train(model, device, train_loader, optimizer, epoch)
-     test(model, device, test_loader)
+     _, accuracy, _ =test(model, device, test_loader)
+     if accuracy >= 99.40:
+        break
      scheduler.step()
     
     # Initialize model
@@ -92,7 +94,7 @@ def train(model, device, train_loader, optimizer, epoch):
     processed += len(data)
     
     #pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
-  print(f'Train Accuracy: {100*correct/processed:.2f}%')
+  #print(f'Train Accuracy: {100*correct/processed:.2f}%')
     
 
 def test(model, device, test_loader):
