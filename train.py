@@ -65,6 +65,7 @@ def train_model():
     train_acc = []
     test_acc = []   
     for epoch in range(EPOCHS):
+     print("Epoch:",epoch)
      train(model, device, train_loader, optimizer, epoch)
      test(model, device, test_loader)
      scheduler.step()
@@ -94,7 +95,7 @@ def train(model, device, train_loader, optimizer, epoch):
     
     #loss = F.nll_loss(y_pred, target)
     loss=cri(y_pred,target)
-    train_losses.append(loss)
+    # train_losses.append(loss)
 
     # Backpropagation
     loss.backward()
@@ -106,7 +107,7 @@ def train(model, device, train_loader, optimizer, epoch):
     correct += pred.eq(target.view_as(pred)).sum().item()
     processed += len(data)
 
-    pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
+    print(f'Train Accuracy: {accuracy:.2f}%')
     train_acc.append(100*correct/processed)
 
 def test(model, device, test_loader):
@@ -126,7 +127,7 @@ def test(model, device, test_loader):
     
     
     test_loss /= len(test_loader.dataset)
-    test_losses.append(test_loss)
+    #test_losses.append(test_loss)
 
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
         test_loss, correct, len(test_loader.dataset),
