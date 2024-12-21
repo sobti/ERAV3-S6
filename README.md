@@ -83,5 +83,23 @@ This will:
    - Transformations:Brightness Adjustment: Randomly alters image brightness.
    - Rotation: Rotates images between -10° and 10°.
    - Normalization: Normalizes images using mean 0.1307 and std 0.3081.
+   - Batch Norm is used
+   - Drop Out is Used
+   - GAP is used
+   - 1*1 kernal is used
+   - Parameter is below 10K
+   - Test Accuracy is 99.41%
+   - Early Stopping is used
+
+## Test Logs:
+
+- Epoch: 0 Test set: Average loss: 0.0001, Accuracy: 9795/10000 (97.95%)
+- Epoch: 1 Test set: Average loss: 0.0001, Accuracy: 9799/10000 (97.99%)
+- Epoch: 2 Test set: Average loss: 0.0001, Accuracy: 9841/10000 (98.41%)
+- Epoch: 3 Test set: Average loss: 0.0001, Accuracy: 9842/10000 (98.42%)
+- Epoch: 4 Test set: Average loss: 0.0000, Accuracy: 9928/10000 (99.28%)
+- Epoch: 5 Test set: Average loss: 0.0000, Accuracy: 9937/10000 (99.37%)
+- Epoch: 6 Test set: Average loss: 0.0000, Accuracy: 9939/10000 (99.39%)
+- Epoch: 7 Test set: Average loss: 0.0000, Accuracy: 9941/10000 (99.41%)
 
 
